@@ -13,10 +13,9 @@ public class scriptContador : MonoBehaviour
       GameObject[] allGameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
       int identifier = 0;
       foreach (var item in allGameObjects) {
-        (GameObject gameObject_, int identifier_, int counter_) tmpTuple = (item, identifier, 0);
+        (GameObject gameObject_, int identifier_, int counter_) tmpTuple = (item, identifier++, 0);
         tuplesList.Add(tmpTuple);
         Debug.LogFormat($"Item: {tmpTuple.gameObject_} has identifier: {tmpTuple.identifier_}");
-        identifier++;
       }
       tuplesArray = tuplesList.ToArray();
     }
